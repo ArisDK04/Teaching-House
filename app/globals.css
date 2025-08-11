@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 @plugin "daisyui" {
-  themes: th-friendly --default, th-pro, th-minimal;
+  themes: --th-friendly --default, --th-pro, --th-minimal;
 }
 
 @plugin "daisyui/theme" {
-  name: 'th-friendly';
+  name: '--th-friendly';
   color-scheme: light;
 
   --color-base-100: #f7f9fb;
@@ -75,7 +75,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: 'th-pro';
+  name: '--th-pro';
   color-scheme: light;
 
   --color-base-100: #f9fafb;
@@ -142,7 +142,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: 'th-minimal';
+  name: '--th-minimal';
   color-scheme: light;
 
   --color-base-100: #fafafa;
@@ -264,48 +264,53 @@
   }
 }
 
-/* ---------- COMPONENTS LAYER ---------- */
-@layer components {
-  .container-page {
-    width: min(100% - 2rem, var(--container-max));
-    margin-inline: auto;
-  }
-
-  .section {
-    @apply py-12 md:py-16;
-  }
-  .section-sm {
-    @apply py-8;
-  }
-  .section-lg {
-    @apply py-16 md:py-24;
-  }
-
-  .card-padded {
-    @apply p-6 md:p-8;
-  }
-  .btn-cta {
-    @apply btn btn-primary font-semibold;
-  }
-
-  /* helpers that use theme tokens */
-  .shadow-soft {
-    box-shadow: var(--shadow-md);
-  }
-  .chip {
-    @apply inline-flex items-center gap-2 px-3 py-1 text-sm;
-    border-radius: var(--radius-pill);
-    background: color-mix(in oklab, var(--color-primary) 8%, transparent);
-    color: var(--color-primary);
-  }
+/* ---- Custom utilities (Tailwind v4) ---- */
+@utility prose-max {
+  max-width: 70ch;
 }
 
-/* ---------- UTILITIES LAYER ---------- */
-@layer utilities {
-  .prose-max {
-    max-width: 70ch;
-  }
-  .border-strong {
-    border: 2px solid var(--color-border-strong);
-  }
+@utility border-strong {
+  border: 2px solid var(--color-border-strong);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-md);
+}
+
+/* Use your theme font variables as utilities */
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+/* Handy layout helpers */
+@utility container-page {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+}
+
+@utility section {
+  padding-block: 3rem;
+}
+@utility section-sm {
+  padding-block: 2rem;
+}
+@utility section-lg {
+  padding-block: 4rem;
+}
+
+/* A utility version of the chip (so you can @apply it) */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 0.75rem;
+  padding-block: 0.25rem;
+  font-size: 0.875rem; /* text-sm */
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
 }

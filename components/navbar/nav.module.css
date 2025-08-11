@@ -1,0 +1,5 @@
+@reference "../../app/globals.css";
+
+.navigation {
+  @apply navbar bg-base-100 border-b border-strong shadow-soft;
+}
