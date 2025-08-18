@@ -1,0 +1,10 @@
+@reference "../../app/globals.css";
+
+.section {
+  @apply section bg-base-100 chip;
+  background-color: aqua ;
+}
+
+.container {
+  @apply container-page items-center gap-10 md:grid-cols-2;
+}

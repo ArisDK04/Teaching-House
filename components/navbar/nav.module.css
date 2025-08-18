@@ -3,3 +3,11 @@
 .navigation {
   @apply navbar bg-base-100 border-b border-strong shadow-soft;
 }
+
+.container {
+  @apply container-page flex justify-between items-center;
+}
+
+.links {
+  @apply menu menu-horizontal gap-2 hidden md:flex;
+}

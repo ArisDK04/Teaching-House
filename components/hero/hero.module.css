@@ -1,0 +1,46 @@
+@reference "../../app/globals.css";
+
+.section {
+  @apply section bg-base-100;
+}
+
+.info {
+  @apply container-page items-center gap-10 md:grid-cols-2;
+}
+
+.tags {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.title {
+  @apply text-4xl md:text-5xl font-extrabold leading-tight text-base-content;
+  font-family: var(--font-heading);
+}
+
+.text {
+  @apply text-base md:text-lg text-base-content/80 prose-max;
+}
+
+.proof {
+  @apply mt-4 grid grid-cols-3 gap-4 text-center;
+}
+
+.item {
+  @apply p-4 rounded-xl shadow-soft bg-base-100 border border-base-300;
+}
+
+.itemtop {
+  @apply text-2xl font-bold text-primary;
+}
+
+.itembot {
+  @apply text-xs opacity-70;
+}
+
+.image {
+  @apply relative aspect-[4/3] md:aspect-[5/4] rounded-2xl overflow-hidden shadow-soft border border-base-300;
+}
+
+.badge {
+  @apply absolute bottom-4 left-4 bg-base-100/90 backdrop-blur rounded-2xl px-4 py-2 border border-base-300 shadow-soft;
+}

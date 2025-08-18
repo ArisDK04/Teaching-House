@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setTheme } from '#/store/actions/ui';
 import classes from './nav.module.css';
 
+import Logo from './Logo';
 
 export default function Navbar() {
   const { themes } = useSelector((selector) => selector.ui);
@@ -20,7 +21,7 @@ export default function Navbar() {
     if (saved && saved in themes.options) {
       dispatch(setTheme(saved));
     } else {
-      dispatch(setTheme(options[0]));
+      dispatch(setTheme(options[2]));
     }
   }, []);
 
@@ -30,32 +31,30 @@ export default function Navbar() {
 
   return (
     <nav className={classes.navigation}>
-      <div className='container-page flex justify-between items-center'>
-        {/* Logo / Brand */}
-        <Link href='/' className='flex items-center gap-2 font-heading text-xl text-primary'>
-          <span>English School</span>
-        </Link>
+      <div className={classes.container}>
+        <Logo />
 
-        {/* Navigation Links */}
-        <ul className='menu menu-horizontal gap-2 hidden md:flex'>
+        <ul className={classes.links}>
           <li><Link href='/'>Home</Link></li>
           <li><Link href='/courses'>Courses</Link></li>
           <li><Link href='/about'>About</Link></li>
           <li><Link href='/contact'>Contact</Link></li>
         </ul>
 
-        {/* Theme Switcher */}
-        <select
-          className='select select-sm select-bordered ml-4'
+        {/* <select
           value={themes.selection}
+          className={'select select-ghost'}
           onChange={changeTheme}
         >
-          {options.map((t) => (
-            <option key={t} value={t}>
-              {t.replace('--th-', '').replace('-', ' ')}
+          {options.map((theme) => (
+            <option
+              key={theme}
+              value={theme}
+            >
+              {themes.options[theme]}
             </option>
           ))}
-        </select>
+        </select> */}
       </div>
     </nav>
   );

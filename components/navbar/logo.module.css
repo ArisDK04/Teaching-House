@@ -1,0 +1,9 @@
+@reference "../../app/globals.css";
+
+.link {
+  @apply flex items-center gap-2 font-heading text-xl text-primary;
+}
+
+.logo {
+  @apply w-8 md:w-16 text-primary fill-current;
+}

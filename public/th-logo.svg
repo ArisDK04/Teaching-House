@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <mask id="shapeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+      <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAAAY0lEQVR4nL2SSw7AIAhEB+P9r6wLtUIL8VOUHZHMzAMJQIJRBCBYj62GA7GLbSq4ZaioBAHNMM1VzFk0xkeGWHcR8x3DUFBolyzUk8YifPLcPINc9RGLz4fxsXALKZPx7r9FBuZ5DU9jBOfTAAAAAElFTkSuQmCC" x="0" y="0" width="32" height="32" />
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="32" height="32" fill="black" mask="url(#shapeMask)" />
+</svg>
